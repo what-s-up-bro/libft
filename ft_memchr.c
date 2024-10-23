@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 10:26:10 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/10/23 14:36:32 by yaait-am         ###   ########.fr       */
+/*   Created: 2024/10/23 14:42:17 by yaait-am          #+#    #+#             */
+/*   Updated: 2024/10/23 15:09:47 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+#include <stddef.h>
+
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int	i;
+	size_t				i;
+	const unsigned char	*k;
 
 	i = 0;
-	while (s[i] != '\0')
+	k = (const unsigned char *)s;
+	while (i < n)
 	{
-		if (s[i] == (char)c)
+		if (k[i] == (unsigned char)c)
 		{
-			return ((char *)&s[i]);
+			return ((void *)&k[i]);
 		}
 		i++;
-	}
-	if (c == '\0')
-	{
-		return ((char *)&s[i]);
 	}
 	return (0);
 }
