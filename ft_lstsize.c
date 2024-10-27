@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 14:48:16 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/10/27 17:13:58 by yaait-am         ###   ########.fr       */
+/*   Created: 2024/10/27 15:50:58 by yaait-am          #+#    #+#             */
+/*   Updated: 2024/10/27 17:14:26 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-
-#include <stdlib.h>
-#include <unistd.h>
-
-typedef struct	s_list
+int	ft_lstsize(t_list *lst)
 {
-	void	*content;
-	struct	s_list *next;
-}	t_list;
+	int		i;
+	t_list	*yas;
 
-#endef
+	i = 0;
+	if (!lst)
+		return (0);
+	yas = lst;
+	while (yas != NULL)
+	{
+		i++;
+		yas = yas->next;
+	}
+	return (i);
+}

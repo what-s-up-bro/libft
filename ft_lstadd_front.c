@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 14:48:16 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/10/27 17:13:58 by yaait-am         ###   ########.fr       */
+/*   Created: 2024/10/27 15:39:08 by yaait-am          #+#    #+#             */
+/*   Updated: 2024/10/27 17:06:25 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-
-#include <stdlib.h>
-#include <unistd.h>
-
-typedef struct	s_list
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	void	*content;
-	struct	s_list *next;
-}	t_list;
-
-#endef
+	if (!lst || !new)
+		return ;
+	new->next = *lst;
+	*lst = new;
+}

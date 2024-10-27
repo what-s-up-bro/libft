@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 14:48:16 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/10/27 17:13:58 by yaait-am         ###   ########.fr       */
+/*   Created: 2024/10/27 17:17:25 by yaait-am          #+#    #+#             */
+/*   Updated: 2024/10/27 17:23:10 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-
-#include <stdlib.h>
-#include <unistd.h>
-
-typedef struct	s_list
+t_list	*ft_lstlast(t_list *lst)
 {
-	void	*content;
-	struct	s_list *next;
-}	t_list;
+	int		i;
+	t_list	*yas;
 
-#endef
+	if (!lst)
+		return (NULL);
+	yas = lst;
+	while (yas->next != NULL)
+		yas = yas->next;
+	return (yas);
+}

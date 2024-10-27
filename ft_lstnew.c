@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 14:48:16 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/10/27 17:13:58 by yaait-am         ###   ########.fr       */
+/*   Created: 2024/10/27 14:56:48 by yaait-am          #+#    #+#             */
+/*   Updated: 2024/10/27 16:05:01 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-
-#include <stdlib.h>
-#include <unistd.h>
-
-typedef struct	s_list
+t_list	*ft_lstnew(void *content)
 {
-	void	*content;
-	struct	s_list *next;
-}	t_list;
+	t_list	*yas;
 
-#endef
+	yas = malloc(sizeof(t_list));
+	if (!yas)
+		return (NULL);
+	yas->content = content;
+	yas->next = NULL;
+	return (yas);
+}

@@ -6,10 +6,11 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 15:38:55 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/10/26 11:50:08 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/10/27 17:13:58 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include <stdlib.h>
 
 char	*ft_strcpy(char *dest, const char *src)
@@ -54,8 +55,8 @@ char	*ft_strjoin(const char *s1, const char *s2)
 
 	if (!s1 || !s2)
 		return (NULL);
-	i = ft_strlen(s1);
-	j = ft_strlen(s2);
+	i = strlen(s1);
+	j = strlen(s2);
 	yas = malloc(((j + i + 1) * sizeof(char)));
 	if (!yas)
 		return (NULL);
