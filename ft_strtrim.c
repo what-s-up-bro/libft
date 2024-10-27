@@ -1,65 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/08 15:38:55 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/10/26 11:50:08 by yaait-am         ###   ########.fr       */
+/*   Created: 2024/10/26 12:02:25 by yaait-am          #+#    #+#             */
+/*   Updated: 2024/10/27 11:07:24 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include <stdlib.h>
 
-char	*ft_strcpy(char *dest, const char *src)
+static size_t	ft_sir(char c, const char *s)
 {
 	size_t	i;
 
 	i = 0;
-	while (src[i])
+	while (s[i])
 	{
-		dest[i] = src[i];
+		if (c == s[i])
+			return (1);
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (0);
 }
 
-char	*ft_strcat(char *dest, const char *src)
-{
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	j = 0;
-	while (dest[i])
-	{
-		i++;
-	}
-	while (src[j])
-	{
-		dest[i + j] = src[j];
-		j++;
-	}
-	dest[i + j] = '\0';
-	return (dest);
-}
-
-char	*ft_strjoin(const char *s1, const char *s2)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	j;
 	char	*yas;
+	size_t	a;
 
-	if (!s1 || !s2)
-		return (NULL);
-	i = ft_strlen(s1);
-	j = ft_strlen(s2);
-	yas = malloc(((j + i + 1) * sizeof(char)));
+	i = 0;
+	a = 0;
+	if (!s1 || !set)
+		return ;
+	j = strlen(s1) - 1;
+	if (j == -1)
+		return (strdup(""));
+	while (s1[i] && ft_sir(s1[i], set))
+		i++;
+	while (j > i && ft_sir(s1[j], set))
+		j--;
+	yas = malloc ((j - i) + 1 + 1);
 	if (!yas)
 		return (NULL);
-	ft_strcpy(yas, s1);
-	ft_strcat(yas, s2);
+	yas[j - i + 2] = 0;
+	while (s1[i] != '\0' && i <= j)
+		yas[a++] = s1[i++];
 	return (yas);
 }

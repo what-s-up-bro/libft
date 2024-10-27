@@ -3,116 +3,86 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yaait-am <yaait-am@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/16 08:21:42 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/07/16 17:15:51 by yaait-am         ###   ########.fr       */
+/*   Created: 2024/10/26 15:21:06 by yaait-am          #+#    #+#             */
+/*   Updated: 2024/10/26 17:46:44 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	check(char h, char *charset)
+static size_t	ft_count(const char *s, char c)
 {
-	int	i;
-
-	i = 0;
-	while (charset[i] != '\0')
-	{
-		if (h == charset[i])
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
-int	ft_strlen(char *str, char *charset)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0' && !check(str[i], charset))
-		i++;
-	return (i);
-}
-
-int	count(char *str, char *charset)
-{
-	int	i;
-	int	y;
-
-	i = 0;
-	y = 0;
-	while (str[i] != '\0')
-	{
-		while (str[i] != '\0' && check(str[i], charset))
-			i++;
-		if (str[i] != '\0')
-			y++;
-		while (str[i] != '\0' && !check(str[i], charset))
-			i++;
-	}
-	return (y);
-}
-
-char	*ft_strdup(char *src, char *charset)
-{
-	char	*yas;
-	int		i;
-	int		sir;
-
-	i = 0;
-	sir = ft_strlen(src, charset);
-	yas = malloc (sizeof(char) * (sir + 1));
-	if (!yas)
-		return (NULL);
-	while (i < sir)
-	{
-		yas[i] = src[i];
-		i++;
-	}
-	yas[i] = '\0';
-	return (yas);
-}
-
-char	**ft_split(char *str, char *charset)
-{
-	char	**yas;
-	int		i;
+	size_t	i;
 	int		j;
 
 	i = 0;
 	j = 0;
-	yas = malloc(sizeof(char *) * (count(str, charset) + 1));
-	if (!yas)
-		return (NULL);
-	while (str[j] != '\0')
+	while (*s)
 	{
-		while (str[j] != '\0' && check(str[j], charset))
-			j++;
-		if (str[j] != '\0')
+		if (*s == c)
+			j = 0;
+		else if (!j)
 		{
-			yas[i] = ft_strdup(&str[j], charset);
+			j = 1;
 			i++;
 		}
-		while (str[j] != '\0' && !check(str[j], charset))
-			j++;
+		s++;
 	}
-	yas[i] = 0;
-	return (yas);
+	return (i);
 }
 
-/*#include <stdio.h>
-int	main(int argc, char **argv)
+static char	*ft_cpy(const char *s, char c)
 {
-	int		index;
-	char	**split;
-	(void)	argc;
-	split = ft_split(argv[1], argv[2]);
-	index = 0;
-	while (split[index])
+	size_t		i;
+	char		*word;
+	size_t		j;
+	const char	*sir;
+
+	i = 0;
+	j = 0;
+	sir = s;
+	while (*s && *s != c)
 	{
-		printf("%s\n", split[index]);
-		index++;
+		i++;
+		s++;
 	}
-}*/
+	word = (char *)malloc ((i + 1) * sizeof(char));
+	if (!word)
+		return (NULL);
+	while (j < i)
+	{
+		word[j] = sir[j];
+		j++;
+	}
+	word[i] = '\0';
+	return (word);
+}
+
+char	**ft_split(char *s, char c)
+{
+	char	**yas;
+	size_t	words;
+	size_t	i;
+	size_t	j;
+
+	if (!s)
+		return (NULL);
+	words = ft_count(s, c);
+	yas = (char **) malloc ((words + 1) * sizeof(char *));
+	if (!yas)
+		return (NULL);
+	i = 0;
+	while (*s)
+	{
+		while (*s && *s == c)
+			s++;
+		if (*s && *s != c)
+			yas[i++] = ft_cpy(s, c);
+		while (*s && *s != c)
+			s++;
+	}
+	yas[i] = NULL;
+	return (yas);
+}

@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 08:15:40 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/10/26 12:41:04 by yaait-am         ###   ########.fr       */
+/*   Created: 2024/10/27 11:08:00 by yaait-am          #+#    #+#             */
+/*   Updated: 2024/10/27 11:10:08 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlen(const char *c)
-{
-	size_t	i;
+#include <unistd.h>
 
-	i = 0;
-	while (c[i] != '\0')
-		i++;
-	return (i);
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
 }

@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 08:15:40 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/10/26 12:41:04 by yaait-am         ###   ########.fr       */
+/*   Created: 2024/10/27 11:02:32 by yaait-am          #+#    #+#             */
+/*   Updated: 2024/10/27 11:07:07 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t	ft_strlen(const char *c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (c[i] != '\0')
+	if (!s || !f)
+		return ;
+	while (s[i])
+	{
+		f(i, &s[i]);
 		i++;
-	return (i);
+	}
 }
