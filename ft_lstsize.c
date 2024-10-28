@@ -6,9 +6,11 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 15:50:58 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/10/27 17:14:26 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/10/28 10:19:15 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_lstsize(t_list *lst)
 {
