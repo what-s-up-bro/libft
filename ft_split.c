@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 15:21:06 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/10/29 11:24:57 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/10/30 14:38:07 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,8 @@ static char	*ft_cpy(const char *s, char c)
 	i = 0;
 	j = 0;
 	sir = s;
-	while (*s && *s != c)
-	{
+	while (s[i] && s[i] != c)
 		i++;
-		s++;
-	}
 	word = (char *)malloc ((i + 1) * sizeof(char));
 	if (!word)
 		return (NULL);
@@ -60,26 +57,42 @@ static char	*ft_cpy(const char *s, char c)
 	return (word);
 }
 
+static void	free_all(char **ar, size_t c)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < c)
+	{
+		free(ar[i]);
+		i++;
+	}
+	free(ar);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**yas;
 	size_t	words;
 	size_t	i;
 
-	if (!s)
-		return (NULL);
 	words = ft_count(s, c);
 	yas = (char **) malloc ((words + 1) * sizeof(char *));
-	if (!yas)
+	if (!yas || !s)
 		return (NULL);
 	i = 0;
 	while (*s)
 	{
-		while (*s && *s == c)
-			s++;
-		if (*s && *s != c)
-			yas[i++] = ft_cpy(s, c);
-		while (*s && *s != c)
+		if (*s != c)
+		{
+			yas[i] = ft_cpy(s, c);
+			if (!yas[i])
+				return (free_all(yas, i), NULL);
+			i++;
+			while (*s && *s != c)
+				s++;
+		}
+		else
 			s++;
 	}
 	yas[i] = NULL;
