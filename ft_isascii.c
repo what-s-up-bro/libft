@@ -6,11 +6,11 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 08:09:26 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/10/22 10:11:58 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/10/29 12:04:05 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(char c)
+int	ft_isascii(int c)
 {
 	return (c >= 0 && c <= 127);
 }

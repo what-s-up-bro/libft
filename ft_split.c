@@ -6,11 +6,11 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 15:21:06 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/10/26 17:46:44 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/10/29 11:24:57 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static size_t	ft_count(const char *s, char c)
 {
@@ -60,12 +60,11 @@ static char	*ft_cpy(const char *s, char c)
 	return (word);
 }
 
-char	**ft_split(char *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**yas;
 	size_t	words;
 	size_t	i;
-	size_t	j;
 
 	if (!s)
 		return (NULL);

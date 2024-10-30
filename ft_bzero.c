@@ -6,13 +6,13 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 11:41:01 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/10/23 13:23:37 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/10/29 11:20:24 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddif.h>
+#include "libft.h"
 
-void	bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, 0, n);
 }

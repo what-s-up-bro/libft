@@ -6,26 +6,21 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:26:10 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/10/23 14:36:32 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/10/30 09:38:38 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
+	while (*s)
 	{
-		if (s[i] == (char)c)
-		{
-			return ((char *)&s[i]);
-		}
-		i++;
+		if (*s == (char)c)
+			return ((char *)s);
+		s++;
 	}
-	if (c == '\0')
-	{
-		return ((char *)&s[i]);
-	}
+	if (*s == (char)c)
+		return ((char *)s);
 	return (0);
 }

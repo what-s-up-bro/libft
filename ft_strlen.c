@@ -6,9 +6,11 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 08:15:40 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/10/26 12:41:04 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/10/29 11:29:32 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 size_t	ft_strlen(const char *c)
 {

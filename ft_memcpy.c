@@ -6,11 +6,11 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 15:14:54 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/10/27 12:14:18 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/10/30 09:50:01 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	const unsigned char	*s;
 	size_t				i;
 
+	if (dest == NULL || src == NULL)
+		return (NULL);
 	d = (unsigned char *) dest;
 	s = (const unsigned char *)src;
 	i = 0;

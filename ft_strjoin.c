@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/08 15:38:55 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/10/27 17:13:58 by yaait-am         ###   ########.fr       */
+/*   Created: 2024/10/30 09:59:38 by yaait-am          #+#    #+#             */
+/*   Updated: 2024/10/30 09:59:53 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strcpy(char *dest, const char *src)
 {

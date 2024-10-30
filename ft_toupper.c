@@ -6,11 +6,13 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:22:01 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/10/22 10:57:51 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/10/29 11:36:36 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_toupper(char c)
+#include "libft.h"
+
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		c = c - 32;

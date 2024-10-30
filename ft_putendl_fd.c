@@ -6,13 +6,13 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 11:14:53 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/10/27 11:16:53 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/10/29 11:23:55 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char const *s, int fd)
 {
 	if (!s)
 		return ;

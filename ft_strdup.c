@@ -6,21 +6,11 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 09:24:36 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/10/26 12:01:42 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/10/30 09:02:26 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-size_t	ft_strlen(const char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_strdup(const char *src)
 {
@@ -38,6 +28,6 @@ char	*ft_strdup(const char *src)
 		yas[j] = src[j];
 		j++;
 	}
-	yas[j] = '\0';
+	yas[i] = '\0';
 	return (yas);
 }

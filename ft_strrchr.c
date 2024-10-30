@@ -6,9 +6,11 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 14:24:32 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/10/23 14:39:01 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/10/29 11:14:27 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {

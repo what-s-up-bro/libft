@@ -6,11 +6,11 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 08:12:22 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/10/22 10:13:12 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/10/29 12:04:10 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(char c)
+int	ft_isprint(int c)
 {
 	return ((c >= 32 && c <= 126));
 }

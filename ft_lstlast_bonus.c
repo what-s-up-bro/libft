@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 12:33:52 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/10/28 12:38:34 by yaait-am         ###   ########.fr       */
+/*   Created: 2024/10/27 17:17:25 by yaait-am          #+#    #+#             */
+/*   Updated: 2024/10/29 11:40:01 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+#include "libft.h"
+
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (!lst || !f || !del)
-		return ;
-	
+	t_list	*yas;
+
+	if (!lst)
+		return (NULL);
+	yas = lst;
+	while (yas->next != NULL)
+		yas = yas->next;
+	return (yas);
 }
