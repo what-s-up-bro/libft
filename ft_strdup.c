@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 09:24:36 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/10/30 09:02:26 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/01 09:05:31 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ char	*ft_strdup(const char *src)
 	size_t	i;
 	size_t	j;
 
-	i = ft_strlen(src);
-	yas = malloc (sizeof(char) * (i + 1));
+	i = strlen(src);
+	yas = malloc(i + 1);
 	if (!yas)
 		return (NULL);
 	j = 0;
