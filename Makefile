@@ -23,6 +23,9 @@ $(NAME): $(OBJ)
 bonus: $(OBJ) $(BOB)
 	ar rcs $(NAME) $(OBJ) $(BOB)
 
+%.o: %.c
+	$(CC) $(CFL) -c $< -o $@
+
 clean:
 	rm -f $(BOB) $(OBJ)
 
