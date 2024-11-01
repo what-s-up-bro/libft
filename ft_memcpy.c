@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 15:14:54 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/10/30 11:13:08 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/01 12:41:48 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,13 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		i++;
 	}
 	return (dest);
+}
+
+#include <string.h>
+
+int main()
+{
+	char str[] = "imadz";
+	memcpy(str + 2, str,2);
+	printf("str => %s\n",str);
 }
