@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 11:10:44 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/10/29 11:24:12 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/03 09:53:10 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr_fd(char const *s, int fd)
 {
-	if (!s)
+	if (!s || fd < 0)
 		return ;
 	write(fd, s, ft_strlen(s));
 }

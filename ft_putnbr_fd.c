@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 11:20:07 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/10/29 12:06:32 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/03 09:52:56 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putnbr_fd(int nb, int fd)
 {
+	if (fd < 0)
+		return ;
 	if (nb == -2147483648)
 	{
 		ft_putchar_fd('-', fd);

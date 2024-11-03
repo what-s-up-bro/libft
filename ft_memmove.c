@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 15:17:36 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/10/30 11:36:38 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/03 09:50:41 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char		*d;
-	const unsigned char	*s;
-	size_t				i;
-	size_t				a;
+	unsigned char	*d;
+	unsigned char	*s;
+	size_t			i;
+	size_t			a;
 
 	d = (unsigned char *)dest;
-	s = (const unsigned char *)src;
+	s = (unsigned char *)src;
 	if (d == NULL && s == NULL)
 		return (NULL);
 	if (d < s)

@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 15:21:06 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/10/30 14:38:07 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/03 09:57:34 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,15 +70,27 @@ static void	free_all(char **ar, size_t c)
 	free(ar);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**ft_null(const char *s, char c)
 {
-	char	**yas;
 	size_t	words;
-	size_t	i;
+	char	**yas;
 
+	if (!s)
+		return (NULL);
 	words = ft_count(s, c);
 	yas = (char **) malloc ((words + 1) * sizeof(char *));
-	if (!yas || !s)
+	if (!yas)
+		return (NULL);
+	return (yas);
+}
+
+static char	**ft_split(char const *s, char c)
+{
+	char	**yas;
+	size_t	i;
+
+	yas = ft_null(s, c);
+	if (!yas)
 		return (NULL);
 	i = 0;
 	while (*s)
