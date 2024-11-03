@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 15:21:06 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/03 09:57:34 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/03 11:37:53 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ static char	**ft_null(const char *s, char c)
 	return (yas);
 }
 
-static char	**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**yas;
 	size_t	i;
