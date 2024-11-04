@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 10:00:20 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/03 10:51:10 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/03 17:25:13 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 int					ft_atoi(char const *s);
 void				ft_bzero(void *s, size_t n);
