@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 10:29:54 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/10/28 12:27:24 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/04 15:41:29 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*one;
 	t_list	*two;
 
-	if (!lst ||!del)
+	if (!lst || !del)
 		return ;
 	one = *lst;
 	while (one != NULL)

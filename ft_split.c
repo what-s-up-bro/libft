@@ -6,13 +6,13 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 15:21:06 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/03 11:37:53 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/04 16:19:19 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_count(const char *s, char c)
+static size_t	ft_count(char const *s, char c)
 {
 	size_t	i;
 	int		j;
@@ -33,7 +33,7 @@ static size_t	ft_count(const char *s, char c)
 	return (i);
 }
 
-static char	*ft_cpy(const char *s, char c)
+static char	*ft_cpy(char const *s, char c)
 {
 	size_t		i;
 	char		*word;
@@ -70,7 +70,7 @@ static void	free_all(char **ar, size_t c)
 	free(ar);
 }
 
-static char	**ft_null(const char *s, char c)
+static char	**ft_null(char const *s, char c)
 {
 	size_t	words;
 	char	**yas;

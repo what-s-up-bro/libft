@@ -6,21 +6,21 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 14:53:39 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/02 14:35:26 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/04 15:44:51 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t num, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
 	void	*yas;
 
-	if (size != 0 && num > (SIZE_MAX / size))
+	if (size != 0 && count > (SIZE_MAX / size))
 		return (NULL);
-	yas = malloc(num * size);
+	yas = malloc(count * size);
 	if (!yas)
 		return (NULL);
-	ft_memset(yas, 0, num * size);
+	ft_memset(yas, 0, count * size);
 	return (yas);
 }

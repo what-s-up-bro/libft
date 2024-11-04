@@ -6,21 +6,21 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 10:35:20 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/03 09:43:07 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/04 16:05:48 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *ptr1, const void *ptr2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t			i;
 	unsigned char	*p1;
 	unsigned char	*p2;
 
 	i = 0;
-	p1 = (unsigned char *)ptr1;
-	p2 = (unsigned char *)ptr2;
+	p1 = (unsigned char *)s1;
+	p2 = (unsigned char *)s2;
 	while (i < n)
 	{
 		if (p1[i] != p2[i])
