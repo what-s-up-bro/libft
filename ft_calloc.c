@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 14:53:39 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/04 15:44:51 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/09 18:38:15 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*yas;
 
-	if (size != 0 && count > (SIZE_MAX / size))
+	if (size != 0 && count > (((size_t) - 1) / size))
 		return (NULL);
 	yas = malloc(count * size);
 	if (!yas)
